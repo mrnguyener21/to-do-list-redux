@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import counter from './counter'
+import tasks from './tasks'
 
-const allReducer = combineReducers({counter});
+const allReducer = combineReducers({ tasks });
 
 export default allReducer;
