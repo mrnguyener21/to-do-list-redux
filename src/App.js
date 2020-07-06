@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from 'react'
 
-import { add } from './actions'
+import { add, remove } from './actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 import styles from './App.module.css'
@@ -18,7 +18,14 @@ const App = () => {
                 <button onClick={() => dispatch(add(value))}>ADD</button> 
             </div>
                 <div className={styles.tasks}>
-                    {tasks.map(({ value }) => <li>{value}</li>)}
+                    {tasks.map(({ task, id }) => 
+                    <li
+                        onClick={() => dispatch(remove(id))}
+                        key={id}
+                    >
+                    {task}
+                    {console.log(tasks)}
+                    </li>)}
                 </div>
         </div>
     )

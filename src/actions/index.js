@@ -1,3 +1,6 @@
-import { ADD } from '../constants/actionType'
+import { ADD, REMOVE } from '../constants/actionType'
 
-export const add = (task) => ({type: ADD, payload:task})
+import { v4 as uuidv4 } from 'uuid';
+
+export const add = (task) => ({type: ADD, payload:task});
+export const remove = (id) => ({type: REMOVE, payload:id});
